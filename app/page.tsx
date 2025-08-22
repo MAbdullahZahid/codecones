@@ -12,7 +12,7 @@ export default function Home() {
   return (
     <>
       <Banner />
-      {/* <Navbar /> */}
+      <Navbar />
 
       {/* <section className="flex flex-col px-20 py-16">
        
