@@ -17,11 +17,11 @@ export default function TrustedCompanies() {
 
   useEffect(() => {
     const slider = document.getElementById('slider');
-    console.log('Slider Element:', slider);  // Debugging if the element is found
+    console.log('Slider Element:', slider);  
 
     if (slider) {
-      const totalWidth = slider.scrollWidth / 2;  // Half because we duplicated the array
-      console.log('Total Width:', totalWidth);  // Debugging the scrollWidth
+      const totalWidth = slider.scrollWidth / 2;  
+      console.log('Total Width:', totalWidth);  
 
       if (totalWidth > 0) {
         gsap.to(slider, {
