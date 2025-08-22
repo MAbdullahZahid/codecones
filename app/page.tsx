@@ -6,7 +6,7 @@ import people1 from '../public/assets/people1.svg';
 import people2 from '../public/assets/people2.svg';
 import people3 from '../public/assets/people3.svg';
 import googleReviews from '../public/assets/googleReview.svg';
-
+import AnimatedText from "./components/AnimatedText";
 
 export default function Home() {
   return (
@@ -23,7 +23,7 @@ export default function Home() {
     <h1 className="text-[88px] leading-[1.1] text-[#1C1C1C] font-semibold">
       Global UX/UI design agency digital partner for
       <span className="text-[#FFC94D] font-bold">
-        Business Application
+       <AnimatedText />
       </span>
     </h1>
   </div>
