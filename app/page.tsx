@@ -1,6 +1,7 @@
 import Image from "next/image";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
+import TrustedCompanies from "./components/trustedCompanies";
 import arrowUpRight from "../public/assets/arrow-up-right.svg";
 import people1 from '../public/assets/people1.svg';
 import people2 from '../public/assets/people2.svg';
@@ -43,6 +44,7 @@ export default function Home() {
                     alt="Founder 1"
                     width={40}
                     height={40}
+                    priority
                     className="rounded-full border-2 border-white"
                   />
                   <Image
@@ -50,6 +52,7 @@ export default function Home() {
                     alt="Founder 2"
                     width={40}
                     height={40}
+                    priority
                     className="rounded-full border-2 border-white"
                   />
                   <Image
@@ -57,6 +60,7 @@ export default function Home() {
                     alt="Founder 3"
                     width={40}
                     height={40}
+                    priority
                     className="rounded-full border-2 border-white"
                   />
                 </div>
@@ -70,6 +74,7 @@ export default function Home() {
                   alt="Google Reviews"
                   width={150}
                   height={50}
+                  priority
                   className="w-[110px] xs:w-[120px] sm:w-[130px] md:w-[140px] lg:w-[150px]"
                 />
               </div>
@@ -89,6 +94,8 @@ export default function Home() {
           </button>
         </div>
       </section>
+
+      <TrustedCompanies />
     </>
   );
 }

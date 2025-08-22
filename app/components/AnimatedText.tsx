@@ -1,7 +1,8 @@
-"use client";
+"use client"; 
 
-import { useEffect, useRef } from "react";
+import { useRef } from "react";
 import gsap from "gsap";
+import { useGSAP } from "@gsap/react";
 
 const texts = [
   "SaaS Companies",
@@ -13,7 +14,7 @@ const texts = [
 export default function AnimatedText() {
   const textRef = useRef<HTMLSpanElement>(null);
 
-  useEffect(() => {
+  useGSAP(() => {
     if (!textRef.current) return;
 
     const el = textRef.current;
@@ -31,10 +32,12 @@ export default function AnimatedText() {
       tl.to({}, { duration: 1 }); // pause
     });
 
-    return () => {
-      tl.kill();
-    };
+    return () => tl.kill();
   }, []);
 
-  return <span className="text-[#FFC94D] font-bold" ref={textRef}>{texts[0]}</span>;
+  return (
+    <span className="text-[#FFC94D] font-bold" ref={textRef}>
+      {texts[0]}
+    </span>
+  );
 }
