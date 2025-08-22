@@ -20,6 +20,7 @@ export default function Navbar() {
             alt="Logo"
             width={300}
             height={48}
+            priority
             className="max-[1150px]:w-[220px] max-[800px]:w-[180px]"
           />
         </div>
@@ -36,7 +37,7 @@ export default function Navbar() {
                   {item}
                 </a>
                 {(item === "Products" || item === "Services") && (
-                  <Image src={downArrow} alt="down arrow" width={14} height={14} />
+                  <Image src={downArrow} alt="down arrow" width={14} height={14} priority/>
                 )}
               </li>
             ))}
@@ -47,7 +48,7 @@ export default function Navbar() {
         <div className="hidden md:flex flex-shrink-0 ml-6">
           <button className="flex items-center space-x-2 bg-[#003462] text-white px-6 py-2 max-[1150px]:px-4 max-[1150px]:py-1 max-[1150px]:text-[14px] text-[16px] font-medium hover:bg-[#002a4d] transition rounded-[500px]">
             <span>Contact Us</span>
-            <Image src={arrowUpRight} alt="arrow up right" width={18} height={18} />
+            <Image src={arrowUpRight} alt="arrow up right" width={18} height={18} priority />
           </button>
         </div>
 
