@@ -19,7 +19,7 @@ export default function Home() {
         
           {/* Left content - heading with animated text */}
           <div className="max-w-3xl w-full text-center lg:text-left">
-            <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[50px] leading-[1.1] text-[#1C1C1C] font-bold">
+            <h1 className="text-3xl sm:text-4xl sm:font-medium md:text-[42px] md:font-bold lg:text-[50px] leading-[1.1] text-[#1C1C1C] font-bold">
               Global UX/UI design agency digital partner for
               <span className="text-[#FFC94D] text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-bold block mt-2 min-h-[60px] sm:min-h-[65px] md:min-h-[72px] lg:min-h-[80px]">
                 <AnimatedText />
@@ -63,7 +63,7 @@ export default function Home() {
                 <p className="text-xs font-medium">Loved by 50+ Founders</p>
               </div>
 
-              {/* Google reviews - carefully adjusted sizing */}
+             
               <div className="mt-3 xs:mt-0">
                 <Image
                   src={googleReviews}
@@ -77,7 +77,7 @@ export default function Home() {
           </div>
         </div>
 
-        {/* Buttons - centered on small screens */}
+       
         <div className="flex flex-col sm:flex-row mt-8 md:mt-12 gap-4 md:gap-6 justify-center lg:justify-start">
           <button className="flex items-center justify-center space-x-2 bg-black text-white text-sm md:text-[16px] font-medium px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-gray-800 transition">
             <span>Book a Strategy Call</span>
