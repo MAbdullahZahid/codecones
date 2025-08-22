@@ -12,9 +12,9 @@ export default function Home() {
   return (
     <>
       <Banner />
-      <Navbar />
+      {/* <Navbar /> */}
 
-      <section className="flex flex-col px-20 py-16">
+      {/* <section className="flex flex-col px-20 py-16">
        
        
 <div className="flex flex-row justify-between items-center">
@@ -88,7 +88,7 @@ export default function Home() {
             Get a Custom Quote
           </button>
         </div>
-      </section>
+      </section> */}
     </>
   );
 }
