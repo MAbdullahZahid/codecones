@@ -27,7 +27,7 @@ export default function Home() {
             </h1>
           </div>
 
-          {/* Right content - description and reviews */}
+        
           <div className="max-w-md w-full text-base md:text-[18px] font-medium text-[#1C1C1C] flex flex-col justify-center">
             <p className="text-center lg:text-left">
               We deliver globally UI, UX & web design smoothly, without delay,
@@ -35,7 +35,7 @@ export default function Home() {
             </p>
 
             <div className="flex flex-row xs:flex-row items-center justify-between mt-6 gap-4">
-              {/* Loved by founders */}
+             
               <div className="flex items-center space-x-3">
                 <div className="flex -space-x-3">
                   <Image
