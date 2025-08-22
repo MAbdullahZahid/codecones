@@ -15,9 +15,10 @@ export default function Home() {
       <Navbar />
 
       <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 md:py-12 lg:py-16">
-        <div className="flex flex-col lg:flex-row justify-between items-start lg:items-center gap-8 md:gap-12">
+        <div className="flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12">
         
-          <div className="max-w-3xl w-full">
+          {/* Left content - heading with animated text */}
+          <div className="max-w-3xl w-full text-center lg:text-left">
             <h1 className="text-3xl sm:text-4xl md:text-[42px] lg:text-[50px] leading-[1.1] text-[#1C1C1C] font-bold">
               Global UX/UI design agency digital partner for
               <span className="text-[#FFC94D] text-4xl sm:text-5xl md:text-[54px] lg:text-[60px] font-bold block mt-2 min-h-[60px] sm:min-h-[65px] md:min-h-[72px] lg:min-h-[80px]">
@@ -26,14 +27,14 @@ export default function Home() {
             </h1>
           </div>
 
-         
+          {/* Right content - description and reviews */}
           <div className="max-w-md w-full text-base md:text-[18px] font-medium text-[#1C1C1C] flex flex-col justify-center">
-            <p>
+            <p className="text-center lg:text-left">
               We deliver globally UI, UX & web design smoothly, without delay,
               saving your time and money with an efficient process.
             </p>
 
-            <div className="flex flex-row items-start xs:items-center justify-between mt-6 gap-4">
+            <div className="flex flex-row xs:flex-row items-center justify-between mt-6 gap-4">
               {/* Loved by founders */}
               <div className="flex items-center space-x-3">
                 <div className="flex -space-x-3">
@@ -62,22 +63,22 @@ export default function Home() {
                 <p className="text-xs font-medium">Loved by 50+ Founders</p>
               </div>
 
-           
-              <div>
+              {/* Google reviews - carefully adjusted sizing */}
+              <div className="mt-3 xs:mt-0">
                 <Image
                   src={googleReviews}
                   alt="Google Reviews"
                   width={150}
                   height={50}
-                  className="w-[120px] xs:w-[130px] sm:w-[150px]"
+                  className="w-[110px] xs:w-[120px] sm:w-[130px] md:w-[140px] lg:w-[150px]"
                 />
               </div>
             </div>
           </div>
         </div>
 
-      
-        <div className="flex flex-col sm:flex-row mt-8 md:mt-12 gap-4 md:gap-6">
+        {/* Buttons - centered on small screens */}
+        <div className="flex flex-col sm:flex-row mt-8 md:mt-12 gap-4 md:gap-6 justify-center lg:justify-start">
           <button className="flex items-center justify-center space-x-2 bg-black text-white text-sm md:text-[16px] font-medium px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-gray-800 transition">
             <span>Book a Strategy Call</span>
             <Image src={arrowUpRight} alt="Arrow" width={18} height={18} className="w-4 h-4 md:w-[18px] md:h-[18px]" />
