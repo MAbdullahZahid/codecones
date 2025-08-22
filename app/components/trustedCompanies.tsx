@@ -40,9 +40,12 @@ export default function TrustedCompanies() {
 
   return (
     <div className="overflow-hidden py-8 relative">
-      <div className="text-[36px] font-medium text-center mb-8">
-        Trusted by 500+ global companies
-      </div>
+  <div className="text-[15px] font-semibold text-center mb-8 sm:text-[20px] md:text-[32px] lg:text-[36px] max-[650px]:text-[15px] min-[650px]:max-[775px]:text-[20px]">
+  Trusted by 500+ global companies
+</div>
+
+
+
 
       <div className="relative w-full overflow-hidden">
         <div id="slider" className="flex gap-8 whitespace-nowrap">
