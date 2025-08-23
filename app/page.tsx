@@ -8,6 +8,7 @@ import people2 from '../public/assets/people2.svg';
 import people3 from '../public/assets/people3.svg';
 import googleReviews from '../public/assets/googleReview.svg';
 import AnimatedText from "./components/AnimatedText";
+import PowerfulSolutions from "./components/PowerfulSolutions";
 
 export default function Home() {
   return (
@@ -96,6 +97,7 @@ export default function Home() {
       </section>
 
       <TrustedCompanies />
+      <PowerfulSolutions />
     </>
   );
 }
