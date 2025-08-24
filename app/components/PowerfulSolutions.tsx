@@ -3,9 +3,9 @@ import arrowUpRight from "../../public/assets/arrow-up-right.svg";
 
 export default function PowerfulSolutions() {
   return (
-    <div className="flex flex-col items-center justify-center px-4">
+    <div className="flex flex-col items-center justify-center px-4 bg-[#DFDFDF33]">
     
-      <div className="text-3xl text-center sm:text-4xl sm:font-medium md:text-[35px] md:font-bold lg:text-[42px] leading-[1.1] font-bold max-w-screen-lg">
+      <div className="mt-10 text-3xl text-center sm:text-4xl sm:font-medium md:text-[35px] md:font-bold lg:text-[42px] leading-[1.1] font-bold max-w-screen-lg">
         <span className="text-[#1C1C1C]">Transform your </span>
         <span className="text-[#828282]">ideas into powerful solutions.</span>
       </div>
