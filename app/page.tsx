@@ -11,7 +11,8 @@ import people3 from '../public/assets/people3.svg';
 import googleReviews from '../public/assets/googleReview.svg';
 import AnimatedText from "./components/AnimatedText";
 import PowerfulSolutions from "./components/PowerfulSolutions";
-import Modal from "./components/Modal"; // Import Modal component
+import Modal from "./components/Modal"; 
+import HelpStartUp from "./components/helpStartUp";
 
 const Home: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -106,9 +107,9 @@ const Home: React.FC = () => {
         </div>
       </section>
 
-      {/* TrustedCompanies and PowerfulSolutions Components */}
       <TrustedCompanies />
       <PowerfulSolutions />
+      <HelpStartUp />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
