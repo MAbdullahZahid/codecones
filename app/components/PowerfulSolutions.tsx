@@ -1,4 +1,4 @@
-"use client"
+
 import { useState } from "react";
 import Image from 'next/image';
 import arrowUpRight from "../../public/assets/arrow-up-right.svg";
@@ -82,7 +82,7 @@ export default function PowerfulSolutions() {
 
             <div className="mt-6">
               <p className="text-base md:text-lg text-[#1C1C1C] mb-4">
-                At CodeCones, we're excited to launch {selectedTab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.
+                At CodeCones, we&apos;re excited to launch {selectedTab}—an innovative solution designed to optimize your processes.
               </p>
               <p className="text-base md:text-lg text-[#1C1C1C]">
                 Stay tuned—this is just the beginning of smarter solutions!
