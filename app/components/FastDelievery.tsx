@@ -56,12 +56,13 @@ const FastDelivery = () => {
         </div>
       </div>
      
-      <div className="p-6 md:p-8 text-center mt-8 md:mt-10 rounded-3xl md:rounded-[48px] mb-5" style={{ background: 'radial-gradient(circle at top right,  #003462 10% ,#252525 ,#FBAD18)' }}>
-        <p className="text-[#FFFFFF] text-2xl md:text-3xl lg:text-4xl font-bold mb-6">We deliver reliable software fast in days and weeks</p>
-        <button className="bg-[#FBAD18] text-[#1C1C1C] w-full md:w-[250px] py-3 rounded-full font-bold hover:bg-[#FFA500] transition flex items-center justify-center mx-auto">
-          Book a call <img src="/assets/uprightarrowblack.svg" alt="Arrow" className="inline w-4 h-4 ml-2" />
-        </button>
-      </div>
+    <div className="p-6 md:p-8 text-center mt-8 md:mt-10 rounded-3xl md:rounded-[48px] mb-5 bg-[linear-gradient(to_bottom_right,#003462_0%,#252525_30%,#252525_70%,#FBAD18_100%)] min-h-[300px] flex flex-col justify-center">
+  <p className="text-[#FFFFFF] text-2xl md:text-3xl lg:text-4xl font-bold mb-6">We deliver reliable software fast in days and weeks</p>
+  <button className="bg-[#FBAD18] text-[#1C1C1C] w-full md:w-[250px] py-3 rounded-full font-bold hover:bg-[#FFA500] transition flex items-center justify-center mx-auto">
+    Book a call <img src="/assets/uprightarrowblack.svg" alt="Arrow" className="inline w-4 h-4 ml-2" />
+  </button>
+</div>
+
     </div>
   );
 };
