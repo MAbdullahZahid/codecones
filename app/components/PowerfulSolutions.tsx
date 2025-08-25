@@ -7,7 +7,7 @@ export default function PowerfulSolutions() {
   const [selectedTab, setSelectedTab] = useState<string>("ResolveCX");
 
   // Step 2: Handle tab click to change selected tab
-  const handleTabClick = (tab: string) => { // Use 'string' instead of 'String'
+  const handleTabClick = (tab: string) => {
     setSelectedTab(tab);
   };
 
@@ -38,16 +38,16 @@ export default function PowerfulSolutions() {
 
       <div className="flex">
         {/* Step 3: Render list of tabs vertically */}
-        <div className="flex flex-col items-start gap-4 mr-8 list-none">
+        <div className="flex flex-col items-start gap-6 mr-6 list-none w-1/4">
           {["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"].map((item) => (
             <li
               key={item}
               onClick={() => handleTabClick(item)}
-              className={`py-3 px-6 text-black cursor-pointer w-full ${
+              className={`py-4 px-8 text-lg cursor-pointer w-full transition-all duration-300 ${
                 selectedTab === item
-                  ? "bg-[#1C1C1C] text-white rounded-l-full rounded-r-none"
+                  ? "bg-[#1C1C1C] text-white rounded-l-full rounded-r-none shadow-lg"
                   : "bg-[#DFDFDF] border-2 border-[#1C1C1C] rounded-full"
-              }`}
+              } hover:bg-[#1C1C1C] hover:text-white`}
             >
               {item}
             </li>
@@ -55,22 +55,23 @@ export default function PowerfulSolutions() {
         </div>
 
         {/* Step 4: Conditionally render content based on selected tab */}
-        <div className="flex-grow">
+        <div className="flex-grow w-3/4">
           {["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"].map((tab) => (
             selectedTab === tab && (
-              <div key={tab} className="mt-4">
-                <h2 className="text-2xl font-bold">{tab}</h2>
-                <p>{tab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!</p>
+              <div key={tab} className="">
+                <h2 className="text-3xl font-bold text-[#1C1C1C]">{tab}</h2>
+                <p className="text-lg text-[#1C1C1C]">{tab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!</p>
 
                 {/* Correct path for .gif file */}
                 <img
                   src="/assets/video.gif" // Reference the gif file correctly
                   alt={`${tab} Video`}
+                  className="w-[100%] h-[300px] mt-6 rounded-lg shadow-md mx-auto"
                 />
 
-                <div className="mt-4">
-                  <p>At CodeCones, we’re excited to launch {tab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.</p>
-                  <p>Stay tuned—this is just the beginning of smarter solutions!</p>
+                <div className="mt-6">
+                  <p className="text-lg text-[#1C1C1C]">At CodeCones, we’re excited to launch {tab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.</p>
+                  <p className="text-lg text-[#1C1C1C]">Stay tuned—this is just the beginning of smarter solutions!</p>
                 </div>
               </div>
             )
