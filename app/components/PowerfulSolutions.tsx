@@ -71,7 +71,7 @@ export default function PowerfulSolutions() {
               {selectedTab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!
             </p>
 
-            <img src="/assets/video.gif" 
+            <Image src="/assets/video.gif" 
             alt={`${selectedTab} Video`} className="w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 object-cover rounded-lg shadow-md" />
 
             <div className="mt-6">
