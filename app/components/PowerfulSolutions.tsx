@@ -63,7 +63,7 @@ export default function PowerfulSolutions() {
 
               {/* Correct path for .gif file */}
               <img
-                src="../../public/assets/video.gif" // Reference the gif file correctly
+                src="/assets/video.gif" // Reference the gif file correctly
                 alt="ResolveCX Video"
               />
 
