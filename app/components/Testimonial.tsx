@@ -70,7 +70,7 @@ export default function Testimonials() {
             {/* Content Section */}
             <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left">
               <p className="text-gray-700 mb-4 italic">
-                "As a dad, Nuvra has been incredible for my family. They&apos;re always there when we need them."
+                &quot;As a dad, Nuvra has been incredible for my family. They&apos;re always there when we need them.&quot;
               </p>
 
               <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-2 md:gap-8">
@@ -91,7 +91,6 @@ export default function Testimonials() {
       </div>
 
       {/* Additional cards section */}
-    
       <div
         ref={additionalContainerRef}
         className="flex overflow-x-hidden py-4"
@@ -104,7 +103,7 @@ export default function Testimonials() {
             {/* Content Section - Same as requested */}
             <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left">
               <p className="text-gray-700 mb-4 italic">
-                "As a dad, Nuvra has been incredible for my family. They&apos;re always there when we need them."
+                &quot;As a dad, Nuvra has been incredible for my family. They&apos;re always there when we need them.&quot;
               </p>
 
               <div className="flex flex-col md:flex-row md:items-center md:justify-between w-full gap-2 md:gap-8">
