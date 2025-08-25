@@ -56,25 +56,25 @@ export default function PowerfulSolutions() {
 
         {/* Step 4: Conditionally render content based on selected tab */}
         <div className="flex-grow">
-          {selectedTab === "ResolveCX" && (
-            <div className="mt-4">
-              <h2 className="text-2xl font-bold">ResolveCX</h2>
-              <p>A SaaS-Based Case Management Solution with AI Insights. A SaaS-Based Case Management Solution with AI Insights.</p>
+          {["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"].map((tab) => (
+            selectedTab === tab && (
+              <div key={tab} className="mt-4">
+                <h2 className="text-2xl font-bold">{tab}</h2>
+                <p>{tab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!</p>
 
-              {/* Correct path for .gif file */}
-              <img
-                src="/assets/video.gif" // Reference the gif file correctly
-                alt="ResolveCX Video"
-              />
+                {/* Correct path for .gif file */}
+                <img
+                  src="/assets/video.gif" // Reference the gif file correctly
+                  alt={`${tab} Video`}
+                />
 
-              <div className="mt-4">
-                <p>At CodeCones, we’re excited to launch ResolveCX—an AI-powered SaaS solution that transforms customer issue management. By predicting and preventing problems through machine learning, ResolveCX helps businesses resolve cases faster, boost satisfaction, and drive growth.</p>
-                <p>Stay tuned—this is just the beginning of smarter customer experiences!</p>
+                <div className="mt-4">
+                  <p>At CodeCones, we’re excited to launch {tab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.</p>
+                  <p>Stay tuned—this is just the beginning of smarter solutions!</p>
+                </div>
               </div>
-            </div>
-          )}
-
-          {/* Repeat for other tabs here */}
+            )
+          ))}
         </div>
       </div>
     </div>

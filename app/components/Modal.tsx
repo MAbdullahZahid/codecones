@@ -1,4 +1,3 @@
-// components/Modal.tsx
 import React, { useState } from "react";
 import Image from "next/image"; // To handle the image import
 import img1 from '../../public/assets/Ellipse 4.svg'; // Image 1
@@ -27,7 +26,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
 
       {/* Modal content */}
       <div className="fixed inset-0 flex items-center justify-center z-50">
-        <div className="bg-white p-6 rounded-[32px] w-full sm:w-[400px] md:w-[500px] lg:w-[600px] relative z-60 shadow-lg overflow-auto max-h-[80vh]">
+        <div className="bg-white p-6 rounded-[32px] w-full sm:w-[400px] md:w-[500px] lg:w-[600px] relative z-60 shadow-lg overflow-auto  max-h-[80vh]">
           {/* Close Button */}
           <button 
             onClick={closeModal} 
