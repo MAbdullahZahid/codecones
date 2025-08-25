@@ -1,3 +1,5 @@
+"use client"
+import { useState } from "react";
 import Image from "next/image";
 import Banner from "./components/banner";
 import Navbar from "./components/navbar";
@@ -9,13 +11,22 @@ import people3 from '../public/assets/people3.svg';
 import googleReviews from '../public/assets/googleReview.svg';
 import AnimatedText from "./components/AnimatedText";
 import PowerfulSolutions from "./components/PowerfulSolutions";
+import Modal from "./components/Modal"; // Import Modal component
 
-export default function Home() {
+const Home: React.FC = () => {
+  const [isModalOpen, setIsModalOpen] = useState(false);
+
+  // Open Modal
+  const handleModalOpen = () => setIsModalOpen(true);
+  
+  // Close Modal
+  const handleModalClose = () => setIsModalOpen(false);
+
   return (
     <>
       <Banner />
       <Navbar />
-
+      
       <section className="flex flex-col px-4 sm:px-8 md:px-12 lg:px-16 xl:px-20 py-8 md:py-12 lg:py-16">
         <div className="flex flex-col lg:flex-row justify-between items-center gap-8 md:gap-12">
         
@@ -29,7 +40,6 @@ export default function Home() {
             </h1>
           </div>
 
-        
           <div className="max-w-md w-full text-base md:text-[18px] font-medium text-[#1C1C1C] flex flex-col justify-center">
             <p className="text-center lg:text-left">
               We deliver globally UI, UX & web design smoothly, without delay,
@@ -37,7 +47,6 @@ export default function Home() {
             </p>
 
             <div className="flex flex-row xs:flex-row items-center justify-between mt-6 gap-4">
-             
               <div className="flex items-center space-x-3">
                 <div className="flex -space-x-3">
                   <Image
@@ -68,7 +77,6 @@ export default function Home() {
                 <p className="text-xs font-medium">Loved by 50+ Founders</p>
               </div>
 
-             
               <div className="mt-3 xs:mt-0">
                 <Image
                   src={googleReviews}
@@ -83,9 +91,11 @@ export default function Home() {
           </div>
         </div>
 
-       
         <div className="flex flex-col sm:flex-row mt-8 md:mt-12 gap-4 md:gap-6 justify-center lg:justify-start">
-          <button className="flex items-center justify-center space-x-2 bg-black text-white text-sm md:text-[16px] font-medium px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-gray-800 transition">
+          <button 
+            onClick={handleModalOpen} 
+            className="flex items-center justify-center space-x-2 bg-black text-white text-sm md:text-[16px] font-medium px-6 py-3 md:px-8 md:py-4 rounded-full hover:bg-gray-800 transition"
+          >
             <span>Book a Strategy Call</span>
             <Image src={arrowUpRight} alt="Arrow" width={18} height={18} className="w-4 h-4 md:w-[18px] md:h-[18px]" />
           </button>
@@ -96,9 +106,14 @@ export default function Home() {
         </div>
       </section>
 
+      {/* TrustedCompanies and PowerfulSolutions Components */}
       <TrustedCompanies />
       <PowerfulSolutions />
-      
+
+      {/* Modal */}
+      <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
     </>
   );
 }
+
+export default Home;
