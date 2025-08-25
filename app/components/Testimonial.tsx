@@ -2,15 +2,15 @@
 import { useRef, useEffect } from "react";
 
 export default function Testimonials() {
-  const containerRef = useRef(null);
-  const additionalContainerRef = useRef(null);
+  const containerRef = useRef<HTMLDivElement | null>(null);
+  const additionalContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
     // Function to handle the animation
-    const setupAnimation = (container) => {
+    const setupAnimation = (container: HTMLDivElement | null) => {
       if (!container) return;
-      
-      let animationId;
+
+      let animationId: number;
       const scrollSpeed = 1.5;
 
       const animate = () => {
