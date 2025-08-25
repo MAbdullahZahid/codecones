@@ -36,9 +36,9 @@ export default function PowerfulSolutions() {
 
       <div className="h-8"></div>
 
-      <div className="flex">
-        {/* Step 3: Render list of tabs vertically */}
-        <div className="flex flex-col items-start gap-6 mr-6 list-none w-1/4">
+      <div className="flex flex-col lg:flex-row w-full">
+        {/* Step 3: Render list of tabs vertically for mobile and horizontally for large screens */}
+        <div className="flex flex-col lg:w-1/4 w-full items-start gap-6 mr-6 list-none">
           {["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"].map((item) => (
             <li
               key={item}
@@ -55,23 +55,23 @@ export default function PowerfulSolutions() {
         </div>
 
         {/* Step 4: Conditionally render content based on selected tab */}
-        <div className="flex-grow w-3/4">
+        <div className="flex-grow lg:w-3/4 w-full mt-4 lg:mt-0">
           {["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"].map((tab) => (
             selectedTab === tab && (
-              <div key={tab} className="">
-                <h2 className="text-3xl font-bold text-[#1C1C1C]">{tab}</h2>
-                <p className="text-lg text-[#1C1C1C]">{tab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!</p>
+              <div key={tab} className="mt-6 lg:mt-8">
+                <h2 className="text-2xl sm:text-3xl font-bold text-[#1C1C1C]">{tab}</h2>
+                <p className="text-lg sm:text-xl text-[#1C1C1C] mt-2">{tab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!</p>
 
-                {/* Correct path for .gif file */}
+                {/* Image with reduced size on mobile */}
                 <img
-                  src="/assets/video.gif" // Reference the gif file correctly
+                  src="/assets/video.gif"
                   alt={`${tab} Video`}
-                  className="w-[100%] h-[300px] mt-6 rounded-lg shadow-md mx-auto"
+                  className="w-[100%] h-[250px] sm:h-[300px] mt-6 rounded-lg shadow-md mx-auto"
                 />
 
                 <div className="mt-6">
-                  <p className="text-lg text-[#1C1C1C]">At CodeCones, we’re excited to launch {tab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.</p>
-                  <p className="text-lg text-[#1C1C1C]">Stay tuned—this is just the beginning of smarter solutions!</p>
+                  <p className="text-lg sm:text-xl text-[#1C1C1C]">At CodeCones, we’re excited to launch {tab}—an innovative solution designed to optimize your processes. By leveraging advanced technologies, we provide powerful insights to drive success in various industries.</p>
+                  <p className="text-lg sm:text-xl text-[#828282] mt-4">Stay tuned—this is just the beginning of smarter solutions!</p>
                 </div>
               </div>
             )
