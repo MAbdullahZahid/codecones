@@ -13,6 +13,7 @@ import AnimatedText from "./components/AnimatedText";
 import PowerfulSolutions from "./components/PowerfulSolutions";
 import Modal from "./components/Modal"; 
 import HelpStartUp from "./components/helpStartUp";
+import FastDelivery from "./components/FastDelievery";
 
 const Home: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -110,6 +111,7 @@ const Home: React.FC = () => {
       <TrustedCompanies />
       <PowerfulSolutions />
       <HelpStartUp />
+      <FastDelivery />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
