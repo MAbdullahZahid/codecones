@@ -14,6 +14,7 @@ import PowerfulSolutions from "./components/PowerfulSolutions";
 import Modal from "./components/Modal"; 
 import HelpStartUp from "./components/helpStartUp";
 import FastDelivery from "./components/FastDelievery";
+import Testimonials from "./components/Testimonial";
 
 const Home: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -112,6 +113,7 @@ const Home: React.FC = () => {
       <PowerfulSolutions />
       <HelpStartUp />
       <FastDelivery />
+      <Testimonials />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
