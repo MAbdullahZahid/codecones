@@ -1,14 +1,13 @@
-"use client"
 import { useState } from "react";
 import Image from 'next/image';
 import arrowUpRight from "../../public/assets/arrow-up-right.svg";
 
 export default function PowerfulSolutions() {
   // Step 1: Create a state for selected tab
-  const [selectedTab, setSelectedTab] = useState("ResolveCX");
+  const [selectedTab, setSelectedTab] = useState<string>("ResolveCX");
 
   // Step 2: Handle tab click to change selected tab
-  const handleTabClick = (tab) => {
+  const handleTabClick = (tab: string) => { // Use 'string' instead of 'String'
     setSelectedTab(tab);
   };
 
@@ -66,7 +65,6 @@ export default function PowerfulSolutions() {
               <img
                 src="../../public/assets/video.gif" // Reference the gif file correctly
                 alt="ResolveCX Video"
-              
               />
 
               <div className="mt-4">

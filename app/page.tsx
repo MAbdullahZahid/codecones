@@ -108,7 +108,7 @@ const Home: React.FC = () => {
 
       {/* TrustedCompanies and PowerfulSolutions Components */}
       <TrustedCompanies />
-      {/* <PowerfulSolutions /> */}
+      <PowerfulSolutions />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
