@@ -115,7 +115,7 @@ export default function ProjectDiscussion() {
                 <button
                   key={service}
                   type="button"
-                  className="px-3 py-1.5 text-xs sm:text-sm rounded-full bg-gray-200 text-gray-800 hover:bg-gray-300 transition-colors"
+                  className="px-3 py-1.5 text-xs sm:text-sm rounded-[12px] bg-white border border-gray-300  text-gray-800 hover:bg-gray-300 transition-colors"
                 >
                   {service}
                 </button>
