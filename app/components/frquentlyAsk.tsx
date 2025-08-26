@@ -16,7 +16,7 @@ const FrequentlyAskedQuestions = () => {
           <p>CodeCones provides a full spectrum of services including:</p>
           <ul className="list-disc pl-5 mt-2">
             <li>Custom Software Development (with AI-driven features like predictive analytics and automation)</li>
-            <li>Cloud Solutions & AWS Migration</li>
+            <li>Cloud Solutions &amp; AWS Migration</li>
             <li>DevOps Services</li>
             <li>Staff Augmentation (from individual experts to full Scrum teams)</li>
           </ul>
@@ -25,11 +25,11 @@ const FrequentlyAskedQuestions = () => {
     },
     { 
       question: 'Which industries or types of businesses do you serve?', 
-      answer: 'We work with clients across diverse sectors such as banking, healthcare, logistics, retail, education, and more—helping them solve complex operational and technological challenges through tailored software solutions.' 
+      answer: 'We work with clients across diverse sectors such as banking, healthcare, logistics, retail, education, and more&mdash;helping them solve complex operational and technological challenges through tailored software solutions.' 
     },
     { 
       question: 'What is your approach to AI and innovation?', 
-      answer: 'Our team integrates AI into projects—implementing machine learning, predictive analytics, and automation to deliver smarter, data-driven applications. Innovation and staying current with new technologies are core to our delivery process.' 
+      answer: 'Our team integrates AI into projects&mdash;implementing machine learning, predictive analytics, and automation to deliver smarter, data-driven applications. Innovation and staying current with new technologies are core to our delivery process.' 
     },
     { 
       question: 'How does CodeCones support cloud transitions and DevOps adoption?', 
@@ -37,7 +37,7 @@ const FrequentlyAskedQuestions = () => {
     },
     { 
       question: 'What is staff augmentation and how can it benefit my project?', 
-      answer: 'Staff augmentation allows you to supplement your team with our skilled professionals—whether you need a specialist or an entire agile development team. This flexible hiring model helps you scale efficiently, bringing in the right talent at the right time.' 
+      answer: 'Staff augmentation allows you to supplement your team with our skilled professionals&mdash;whether you need a specialist or an entire agile development team. This flexible hiring model helps you scale efficiently, bringing in the right talent at the right time.' 
     },
   ];
 
@@ -94,7 +94,7 @@ const FrequentlyAskedQuestions = () => {
               </div>
               
               <p className="mb-6 text-start text-gray-200 leading-relaxed flex-1">
-                Hi, I'm Ahmed, the CEO and Founder of Codecones. Don't hesitate to reach out to me anytime – I'm here to answer all your questions!
+                Hi, I&apos;m Ahmed, the CEO and Founder of Codecones. Don&apos;t hesitate to reach out to me anytime &ndash; I&apos;m here to answer all your questions!
               </p>
               
               {/* Ask Question Button */}
