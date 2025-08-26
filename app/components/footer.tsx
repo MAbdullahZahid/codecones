@@ -77,7 +77,7 @@ const Footer = () => {
                 {/* Call to Action Section */}
                 <div className="flex items-center space-x-1">
                     <span>
-  <p className="text-sm text-white">Let's work together</p>
+  <p className="text-sm text-white">Let&apos;s work together</p>
                      <p className="font-medium text-[20px] text-[#FBAD18]">Call Codecones</p>
                     </span>
                   
