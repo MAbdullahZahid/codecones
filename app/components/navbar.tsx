@@ -25,13 +25,12 @@ export default function Navbar() {
           />
         </div>
 
-       
         <nav className="hidden max-[800px]:hidden flex-grow justify-center md:flex">
           <ul className="flex space-x-12 max-[1150px]:space-x-4">
             {["Home", "About", "Products", "Services", "Blogs"].map((item, idx) => (
               <li key={idx} className={idx > 1 ? "flex items-center space-x-1" : ""}>
                 <a
-                  href="#"
+                  href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"} // updated href
                   className="text-[18px] max-[1150px]:text-[14px] font-medium text-[#000] hover:text-gray-700"
                 >
                   {item}
@@ -44,7 +43,6 @@ export default function Navbar() {
           </ul>
         </nav>
 
-       
         <div className="hidden md:flex flex-shrink-0 ml-6">
           <button className="flex items-center space-x-2 bg-[#003462] text-white px-6 py-2 max-[1150px]:px-4 max-[1150px]:py-1 max-[1150px]:text-[14px] text-[16px] font-medium hover:bg-[#002a4d] transition rounded-[500px]">
             <span>Contact Us</span>
@@ -52,7 +50,6 @@ export default function Navbar() {
           </button>
         </div>
 
-       
         <div className="md:hidden max-[800px]:block">
           <button onClick={() => setIsOpen(!isOpen)}>
             {isOpen ? <X size={28} /> : <Menu size={28} />}
@@ -60,13 +57,12 @@ export default function Navbar() {
         </div>
       </div>
 
-   
       {isOpen && (
         <div className="md:hidden mt-4 px-6">
           <ul className="flex flex-col space-y-4 text-[16px] font-medium text-[#000]">
             {["Home", "About", "Products", "Services", "Blogs"].map((item, idx) => (
               <li key={idx} className={idx > 1 ? "flex items-center space-x-1" : ""}>
-                <a href="#">{item}</a>
+                <a href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"}>{item}</a> {/* updated href */}
                 {(item === "Products" || item === "Services") && (
                   <Image src={downArrow} alt="down arrow" width={16} height={16} />
                 )}
