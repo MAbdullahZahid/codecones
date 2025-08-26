@@ -41,7 +41,10 @@ export default function ProjectDiscussion() {
                 height={20} 
                 className="mt-1 flex-shrink-0"
               />
-              <p className="ml-3 text-base sm:text-lg text-gray-700">{item}</p>
+            <p className="ml-3 text-base sm:text-lg text-gray-700">
+  {item.replace(/'/g, '&apos;').replace(/"/g, '&quot;')}
+</p>
+
             </div>
           ))}
         </div>
