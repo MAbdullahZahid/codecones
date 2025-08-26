@@ -17,6 +17,7 @@ import FastDelivery from "./components/FastDelievery";
 import Testimonials from "./components/Testimonial";
 import FrequentlyAskedQuestions from "./components/frquentlyAsk"; 
 import ProjectDiscussion from "./components/ProjectDiscussion";
+import Footer from "./components/footer";
 
 const Home: React.FC = () => {
   const [isModalOpen, setIsModalOpen] = useState(false);
@@ -118,6 +119,7 @@ const Home: React.FC = () => {
       <Testimonials />
       <FrequentlyAskedQuestions />
       <ProjectDiscussion />
+      <Footer />
 
       {/* Modal */}
       <Modal isOpen={isModalOpen} closeModal={handleModalClose} />
