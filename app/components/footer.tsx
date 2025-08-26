@@ -3,7 +3,8 @@ import Image from 'next/image';
 
 const Footer = () => {
     return (
-       <div className="bg-black text-white py-16 rounded-tl-[28px] rounded-tr-[28px]">
+      <div className="relative bg-black text-white py-16 rounded-tl-[28px] rounded-tr-[28px] overflow-hidden">
+
             <div className="max-w-7xl mx-auto flex justify-between px-8">
                 <div className="footer-left max-w-sm">
                     <Image 
@@ -61,9 +62,7 @@ const Footer = () => {
                 </div>
             </div>
             
-            {/* Horizontal Line */}
-            <div className="border-t border-gray-700 my-8"></div>
-            
+           
             {/* Footer bottom section with Social Media and Call to Action */}
             <div className="max-w-7xl mx-auto flex justify-between items-center px-8">
                 {/* Social Media Links */}
@@ -93,8 +92,63 @@ const Footer = () => {
                     </button>
                 </div>
             </div>
+ <div className="border-t border-gray-700 my-8"></div>
+       <div className="max-w-7xl mx-auto flex justify-between items-center px-8 mt-8">
+    <p className="text-sm text-[#A7A7A7]">codecones LLC © 2025</p>
+    
+    <div className="flex items-center space-x-2 text-sm text-[#A7A7A7]">
+        <span>Codecones is a limited liability company based in</span>
+        <Image 
+            src="/assets/flags.png"
+            alt="Flags"
+            width={48}
+            height={24}
+        />
+        
+        {/* Overlapping Person Avatars */}
+        <div className="flex items-center ml-4">
+            <Image 
+                src="/assets/people1.svg"
+                alt="Person 1"
+                width={32}
+                height={32}
+                className="rounded-full border-2 border-black"
+            />
+            <Image 
+                src="/assets/people2.svg"
+                alt="Person 2"
+                width={32}
+                height={32}
+                className="rounded-full border-2 border-black -ml-2"
+            />
+            <Image 
+                src="/assets/people3.svg"
+                alt="Person 3"
+                width={32}
+                height={32}
+                className="rounded-full border-2 border-black -ml-2"
+            />
+            <Image 
+                src="/assets/questionPerson.svg"
+                alt="Person 4"
+                width={32}
+                height={32}
+                className="rounded-full border-2 border-black -ml-2"
+            />
         </div>
-    );
+    </div>
+</div>
+<Image 
+  src="/assets/endfooter logo.svg"
+  alt="End Footer Logo"
+  width={600}
+  height={200}
+  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[5%] pointer-events-none"
+/>
+
+
+        </div>
+    );  
 }
 
 export default Footer;
