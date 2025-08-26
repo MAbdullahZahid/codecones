@@ -14,7 +14,7 @@ export default function ProjectDiscussion() {
           </h1>
           <h1 className="text-3xl sm:text-4xl font-bold">
         <span className="text-[#A7A7A7]">Le</span>
-        <span className="text-[#DFDFDF]">t's talk!</span>
+        <span className="text-[#DFDFDF]">t&apos;s talk!</span>
           </h1>
 
 
@@ -22,7 +22,7 @@ export default function ProjectDiscussion() {
 
           
           <p className="mt-4 text-base sm:text-lg text-gray-500">
-            NDA? Absolutely just ask. We'll respond in 24 hours fast & focused. Work with senior experts, not juniors.
+            NDA? Absolutely just ask. We&apos;ll respond in 24 hours fast & focused. Work with senior experts, not juniors.
           </p>
         </div>
 
@@ -41,10 +41,7 @@ export default function ProjectDiscussion() {
                 height={20} 
                 className="mt-1 flex-shrink-0"
               />
-            <p className="ml-3 text-base sm:text-lg text-gray-700">
-  {item.replace(/'/g, '&apos;').replace(/"/g, '&quot;')}
-</p>
-
+              <p className="ml-3 text-base sm:text-lg text-gray-700">{item}</p>
             </div>
           ))}
         </div>
