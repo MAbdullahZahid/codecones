@@ -43,7 +43,7 @@ const Modal: React.FC<ModalProps> = ({ isOpen, closeModal }) => {
         {isSubmitted ? (
           <div className="bg-white p-6 rounded-[32px] w-full sm:w-[400px] md:w-[500px] lg:w-[600px] relative z-60 shadow-lg max-h-[90vh] flex flex-col justify-center items-center">
             <h2 className="text-2xl font-bold text-center">Thank You</h2>
-            <p className="text-center text-gray-600">Your message has been submitted. We'll get back to you soon.</p>
+            <p className="text-center text-gray-600">Your message has been submitted. We&apos;ll get back to you soon.</p>
           
             <div className="bg-yellow-500 p-4 rounded-full mb-4">
               {/* Success Icon */}
