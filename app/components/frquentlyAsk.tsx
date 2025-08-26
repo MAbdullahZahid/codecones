@@ -1,9 +1,10 @@
 import React, { useState } from 'react';
 
 const FrequentlyAskedQuestions = () => {
-  const [open, setOpen] = useState(null);
+  // Define the type of `open` state as number or null
+  const [open, setOpen] = useState<number | null>(null);
 
-  const toggleAnswer = (index) => {
+  const toggleAnswer = (index: number) => {
     setOpen(open === index ? null : index);
   };
 
@@ -15,12 +16,22 @@ const FrequentlyAskedQuestions = () => {
       </h1>
 
       <div className="flex flex-col">
-        {[
-          { question: 'What services does CodeCones offer?', answer: 'CodeCones offers a range of services including cloud migration, DevOps adoption, AI integration, and staff augmentation.' },
-          { question: 'Which industries or types of businesses do you serve?', answer: 'We serve a variety of industries, including healthcare, finance, retail, and technology.' },
-          { question: 'What is your approach to AI and innovation?', answer: 'We embrace cutting-edge AI solutions to drive innovation and streamline business processes.' },
-          { question: 'How does CodeCones support cloud transitions and DevOps adoption?', answer: 'We provide end-to-end support for seamless cloud transitions and implement DevOps best practices to improve efficiency.' },
-          { question: 'What is staff augmentation and how can it benefit my project?', answer: 'Staff augmentation involves providing skilled professionals to complement your team, enhancing project efficiency and flexibility.' },
+        {[ 
+          { question: 'What services does CodeCones offer?', answer: (
+            <div>
+              <p>CodeCones provides a full spectrum of services including:</p>
+              <ul>
+                <li>Custom Software Development (with AI-driven features like predictive analytics and automation)</li>
+                <li>Cloud Solutions & AWS Migration</li>
+                <li>DevOps Services</li>
+                <li>Staff Augmentation (from individual experts to full Scrum teams)</li>
+              </ul>
+            </div>
+          ) },
+          { question: 'Which industries or types of businesses do you serve?', answer: 'We work with clients across diverse sectors such as banking, healthcare, logistics, retail, education, and more—helping them solve complex operational and technological challenges through tailored software solutions.' },
+          { question: 'What is your approach to AI and innovation?', answer: 'Our team integrates AI into projects—implementing machine learning, predictive analytics, and automation to deliver smarter, data-driven applications. Innovation and staying current with new technologies are core to our delivery process.' },
+          { question: 'How does CodeCones support cloud transitions and DevOps adoption?', answer: 'We ensure seamless and secure AWS cloud migrations, optimize infrastructure for scalability, and embed DevOps best practices to enhance delivery speed, promote continuous integration/deployment, and empower long-term growth.' },
+          { question: 'What is staff augmentation and how can it benefit my project?', answer: 'Staff augmentation allows you to supplement your team with our skilled professionals—whether you need a specialist or an entire agile development team. This flexible hiring model helps you scale efficiently, bringing in the right talent at the right time.' },
         ].map((faq, index) => (
           <div key={index} className="mb-4">
             <div
