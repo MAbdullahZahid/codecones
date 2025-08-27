@@ -53,15 +53,15 @@ useEffect(() => {
     <div className="flex flex-col px-4 bg-[#DFDFDF33] py-8 md:py-12 anim-section">
       {/* Heading Section */}
       <div className="text-center max-w-4xl mx-auto anim-heading">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight">
+      <h1 className="text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-tight">
   <span className="text-[#1C1C1C] split-anim">Transform your </span>
-  <span className="text-[#828282] split-anim">ideas into powerful solutions.</span>
+  <span className="text-[#828282] split-anim">ideas into powerful solutions</span>
 </h1>
 
         <div className="h-4 md:h-6"></div>
 
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
-          <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-bold">
+          <div className="text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold  font-bold">
            <span className="text-[#A7A7A7] split-anim">Just lik</span>
     <span className="text-[#DFDFDF] split-anim">e they did!</span>
           </div>
