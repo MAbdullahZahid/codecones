@@ -92,7 +92,7 @@ const FastDelivery = () => {
       </div>
      
       {/* Gradient Section */}
-      <div className="p-6 md:p-8 text-center mt-8 md:mt-10 rounded-3xl md:rounded-[48px] mb-5 bg-[linear-gradient(to_bottom_right,#003462_0%,#252525_30%,#252525_70%,#FBAD18_100%)] min-h-[300px] flex flex-col justify-center">
+      <div className="p-6 md:p-8 text-center mt-8 md:mt-10 rounded-3xl md:rounded-[48px] mb-5 bg-[linear-gradient(to_bottom_right,#003462_0%,#252525_30%,#252525_80%,#FBAD18_100%)] min-h-[300px] flex flex-col justify-center">
         <p className="text-[#FFFFFF] text-2xl md:text-3xl lg:text-4xl font-bold mb-6">
           We deliver reliable software fast in days and weeks
         </p>
