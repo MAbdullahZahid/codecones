@@ -1,12 +1,17 @@
 "use client";
 import { useRef, useEffect } from "react";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function Testimonials() {
   const containerRef = useRef<HTMLDivElement | null>(null);
   const additionalContainerRef = useRef<HTMLDivElement | null>(null);
 
   useEffect(() => {
-    // Function to handle the animation
+    // ===== Testimonials Auto-scroll =====
     const setupAnimation = (container: HTMLDivElement | null) => {
       if (!container) return;
 
@@ -26,31 +31,52 @@ export default function Testimonials() {
       return () => cancelAnimationFrame(animationId);
     };
 
-    // Setup animations for both containers
     const cleanup1 = setupAnimation(containerRef.current);
     const cleanup2 = setupAnimation(additionalContainerRef.current);
 
-    // Clean up both animations
+    // ===== Heading Animation =====
+    const heading = document.querySelector(".testimonials-heading");
+    if (heading) {
+      const splits: SplitType[] = [];
+      heading.querySelectorAll(".split-anim").forEach((el) => {
+        splits.push(new SplitType(el as HTMLElement, { types: "chars" }));
+      });
+
+      const tl = gsap.timeline({
+        scrollTrigger: {
+          trigger: heading,
+          start: "top 85%",
+          end: "+=100%",
+          scrub: 0.5,
+          markers: false,
+        },
+      });
+
+      splits.forEach((split) => {
+        tl.to(split.chars, { color: "#1C1C1C", stagger: 0.05, duration: 1 });
+      });
+    }
+
+    // ===== Cleanup =====
     return () => {
       if (cleanup1) cleanup1();
       if (cleanup2) cleanup2();
+      ScrollTrigger.getAll().forEach((st) => st.kill());
     };
   }, []);
 
   return (
     <div className="py-12 px-4 overflow-hidden bg-white">
-      <h1 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center max-w-4xl mx-auto">
-        <span className="text-[#1C1C1C]">Bring your best i</span>
-        <span className="text-[#828282]">deas to life with Codecones.</span>{" "}
-        <span className="text-[#A7A7A7]">Your ne</span>
-        <span className="text-[#DFDFDF]">xt success is just one design away.</span>
+      {/* Animated Heading */}
+      <h1 className="testimonials-heading text-2xl sm:text-3xl md:text-4xl font-bold mb-12 text-center max-w-4xl mx-auto leading-tight">
+        <span className="text-[#1C1C1C] split-anim">Bring your best i</span>
+        <span className="text-[#828282] split-anim">deas to life with Codecones.</span>{" "}
+        <span className="text-[#A7A7A7] split-anim">Your ne</span>
+        <span className="text-[#DFDFDF] split-anim">xt success is just one design away.</span>
       </h1>
 
       {/* First set of testimonials */}
-      <div
-        ref={containerRef}
-        className="flex overflow-x-hidden py-4 mb-12"
-      >
+      <div ref={containerRef} className="flex overflow-x-hidden py-4 mb-12">
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
@@ -91,16 +117,12 @@ export default function Testimonials() {
       </div>
 
       {/* Additional cards section */}
-      <div
-        ref={additionalContainerRef}
-        className="flex overflow-x-hidden py-4"
-      >
+      <div ref={additionalContainerRef} className="flex overflow-x-hidden py-4">
         {[...Array(12)].map((_, i) => (
           <div
             key={i}
             className="flex-shrink-0 w-[85vw] md:w-[600px] mx-4 bg-[#F9F9F9] shadow-md rounded-xl p-6"
           >
-            {/* Content Section - Same as requested */}
             <div className="flex-1 flex flex-col justify-center items-center md:items-start text-center md:text-left">
               <p className="text-gray-700 mb-4 italic">
                 &quot;As a dad, Nuvra has been incredible for my family. They&apos;re always there when we need them.&quot;

@@ -15,31 +15,7 @@ export default function PowerfulSolutions() {
 
   const tabs = ["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"];
 
-  useEffect(() => {
-    const splits: SplitType[] = [];
-    document.querySelectorAll(".split-anim").forEach((el) => {
-      splits.push(new SplitType(el as HTMLElement, { types: "chars" }));
-    });
-
-    const tl = gsap.timeline({
-      scrollTrigger: {
-        trigger: ".anim-section",
-        start: "top 110%",
-        end: "+=150%",
-        scrub: 0.5,
-        markers: false,
-      },
-    });
-
-    splits.forEach((split) => {
-      tl.to(split.chars, { color: "#1C1C1C", stagger: 0.05, duration: 1 });
-    });
-
-    return () => {
-      tl.kill();
-      ScrollTrigger.getAll().forEach((st) => st.kill());
-    };
-  }, []);
+ useEffect(() => { const container = document.querySelector(".anim-section"); if (!container) return; const splits: SplitType[] = []; container.querySelectorAll(".split-anim").forEach((el) => { splits.push(new SplitType(el as HTMLElement, { types: "chars" })); }); const tl = gsap.timeline({ scrollTrigger: { trigger: container, start: "top 110%", end: "+=150%", scrub: 0.5, markers: false, }, }); splits.forEach((split) => { tl.to(split.chars, { color: "#1C1C1C", stagger: 0.05, duration: 1 }); }); return () => { tl.kill(); ScrollTrigger.getAll().forEach((st) => st.kill()); }; }, []);
 
   return (
     <div className="flex flex-col bg-[#DFDFDF33] anim-section">
