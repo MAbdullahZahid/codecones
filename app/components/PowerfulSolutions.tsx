@@ -1,7 +1,13 @@
+"use client";
 
-import { useState } from "react";
-import Image from 'next/image';
+import { useState, useEffect } from "react";
+import Image from "next/image";
+import gsap from "gsap";
+import { ScrollTrigger } from "gsap/ScrollTrigger";
+import SplitType from "split-type";
 import arrowUpRight from "../../public/assets/arrow-up-right.svg";
+
+gsap.registerPlugin(ScrollTrigger);
 
 export default function PowerfulSolutions() {
   const [selectedTab, setSelectedTab] = useState<string>("ResolveCX");
@@ -9,21 +15,55 @@ export default function PowerfulSolutions() {
 
   const tabs = ["ResolveCX", "Artificial Intelligence", "Modern Cloud Applications", "Smart Customer Care"];
 
+useEffect(() => {
+  // Split each span individually
+  const splits: SplitType[] = [];
+  document.querySelectorAll(".split-anim").forEach((el) => {
+    splits.push(new SplitType(el as HTMLElement, { types: "chars" }));
+  });
+
+  const tl = gsap.timeline({
+    scrollTrigger: {
+      trigger: ".anim-section",
+      start: "top 110%",
+      end: "+=150%",
+      scrub: 0.5,
+      markers: true,
+    },
+  });
+
+  // Animate each span group sequentially
+  splits.forEach((split) => {
+    tl.to(split.chars, {
+      color: "#1C1C1C",
+      stagger: 0.05,
+      duration: 1,
+    });
+  });
+
+  return () => {
+    tl.kill();
+    ScrollTrigger.getAll().forEach((st) => st.kill());
+  };
+}, []);
+
+
+
   return (
-    <div className="flex flex-col px-4 bg-[#DFDFDF33] py-8 md:py-12">
+    <div className="flex flex-col px-4 bg-[#DFDFDF33] py-8 md:py-12 anim-section">
       {/* Heading Section */}
-      <div className="text-center max-w-4xl mx-auto">
-        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight">
-          <span className="text-[#1C1C1C]">Transform your </span>
-          <span className="text-[#828282]">ideas into powerful solutions.</span>
-        </h1>
-        
+      <div className="text-center max-w-4xl mx-auto anim-heading">
+      <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-[42px] font-bold leading-tight">
+  <span className="text-[#1C1C1C] split-anim">Transform your </span>
+  <span className="text-[#828282] split-anim">ideas into powerful solutions.</span>
+</h1>
+
         <div className="h-4 md:h-6"></div>
-        
+
         <div className="flex flex-col md:flex-row items-center justify-center gap-4">
           <div className="text-2xl sm:text-3xl md:text-4xl lg:text-[50px] font-bold">
-            <span className="text-[#A7A7A7]">Just lik</span>
-            <span className="text-[#DFDFDF]">e they did!</span>
+           <span className="text-[#A7A7A7] split-anim">Just lik</span>
+    <span className="text-[#DFDFDF] split-anim">e they did!</span>
           </div>
 
           <button className="bg-[#003462] text-white py-2 px-6 rounded-full flex items-center justify-center hover:bg-[#002540] transition-colors">
@@ -35,11 +75,10 @@ export default function PowerfulSolutions() {
         </div>
       </div>
 
+      {/* Rest of your content (tabs, etc.) remains same */}
       <div className="h-8 md:h-12"></div>
-
-      {/* Tabs and Content Section */}
       <div className="flex flex-col lg:flex-row gap-6 max-w-6xl mx-auto w-full">
-        {/* Tabs - Vertical on desktop, horizontal on mobile */}
+        {/* Tabs */}
         <div className="flex lg:flex-col gap-4 overflow-x-auto pb-2 lg:pb-0 lg:w-1/4">
           {tabs.map((item) => (
             <div
@@ -61,7 +100,7 @@ export default function PowerfulSolutions() {
           ))}
         </div>
 
-        {/* Content Area */}
+        {/* Content */}
         <div className="w-full lg:w-3/4">
           <div 
             className="bg-white p-4 md:p-6 rounded-lg lg:rounded-l-none rounded-r-lg shadow-sm"
@@ -72,13 +111,13 @@ export default function PowerfulSolutions() {
               {selectedTab} is a powerful solution that utilizes cutting-edge technology to enhance user experience and business outcomes. Explore its full potential!
             </p>
 
-           <Image 
-  src="/assets/video.gif" 
-  alt={`${selectedTab} Video`} 
-  width={500} 
-  height={300} 
-  className="w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 object-cover rounded-lg shadow-md" 
-/>
+            <Image 
+              src="/assets/video.gif" 
+              alt={`${selectedTab} Video`} 
+              width={500} 
+              height={300} 
+              className="w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 object-cover rounded-lg shadow-md" 
+            />
 
             <div className="mt-6">
               <p className="text-base md:text-lg text-[#1C1C1C] mb-4">
