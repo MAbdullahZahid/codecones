@@ -28,7 +28,7 @@ useEffect(() => {
       start: "top 110%",
       end: "+=150%",
       scrub: 0.5,
-      markers: true,
+      markers: false,
     },
   });
 
