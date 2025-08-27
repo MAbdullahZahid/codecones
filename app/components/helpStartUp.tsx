@@ -134,7 +134,7 @@ const HelpStartUp: React.FC = () => {
                   <img
                     src={service.imageUrl}
                     alt={service.name}
-                    className="w-full h-full object-cover rounded-lg border-2 border-gray-300"
+                    className="w-[300px] h-full object-cover rounded-[470px] border-2 border-gray-300"
                   />
                 </div>
 

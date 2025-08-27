@@ -144,8 +144,8 @@ const FrequentlyAskedQuestions = () => {
         <div className="md:w-96 flex-shrink-0">
           <div className="bg-[#1C1C1C] rounded-3xl p-6 text-white h-[350px]">
             <div className="flex flex-col h-full">
-              <div className="mb-6">
-                <div className="w-20 h-20 rounded-full bg-gray-600 flex overflow-hidden mx-auto">
+              <div className="mb-6 flex justify-start">
+                <div className="w-20 h-20 rounded-full bg-gray-600 flex overflow-hidden">
                   <Image
                     src="/assets/questionPerson.svg"
                     alt="Ahmed, CEO of CodeCones"
@@ -163,7 +163,7 @@ const FrequentlyAskedQuestions = () => {
               </p>
 
               {/* Ask Question Button */}
-              <button className="flex items-center justify-center bg-[#FBAD18] text-white py-3 px-6 rounded-full w-full font-medium hover:bg-amber-500 transition-colors">
+              <button className="flex items-center justify-center bg-[#FBAD18] text-white py-3 px-6 rounded-full w-[200px] font-medium hover:bg-amber-500 transition-colors">
                 Ask Question
                 <span className="ml-2">
                   <Image
