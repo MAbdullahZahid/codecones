@@ -52,21 +52,21 @@ const FastDelivery = () => {
         <div className="bg-[#3F3F3F] flex flex-col rounded-2xl md:rounded-3xl p-6 md:p-8 w-full lg:w-1/2">
           <ul className="text-white space-y-4 md:space-y-6">
             <li className="flex items-center border-b border-[#6A6A6A] pb-4">
-              <span className="text-lg md:text-xl mr-3 md:mr-4">01</span>
+              <span className="text-[#A7A7A7] text-[10px] md:text-[12px] mr-3 md:mr-4">01</span>
               Onboard in &lt;1 day
               <div className="flex-grow"></div>
               <img src="/assets/arrow-up-right.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5" />
             </li>
 
             <li className="flex items-center border-b border-[#6A6A6A] pb-4">
-              <span className="text-lg md:text-xl mr-3 md:mr-4">02</span>
+              <span className="text-[#A7A7A7] text-[10px] md:text-[12px] mr-3 md:mr-4">02</span>
               Understand Scope & Needs
               <div className="flex-grow"></div>
               <img src="/assets/arrow-up-right.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5" />
             </li>
 
             <li className="flex items-center border-b border-[#6A6A6A] pb-4">
-              <span className="text-lg md:text-xl mr-3 md:mr-4">03</span>
+              <span className="text-[#A7A7A7] text-[10px] md:text-[12px] mr-3 md:mr-4">03</span>
               First Delivery in 4-5 Days
               <div className="flex-grow"></div>
               <img src="/assets/arrow-up-right.svg" alt="Arrow" className="w-4 h-4 md:w-5 md:h-5" />
@@ -81,13 +81,9 @@ const FastDelivery = () => {
           </p>
 
           <div className="flex flex-row items-center mb-4 md:mb-6">
-            <img src="/assets/quote.svg" alt="Quote" className="w-5 h-5 md:w-6 md:h-6 mr-2" />
-            <span className="text-[#FFFFFF] text-sm md:text-base">Hassan Ali</span>
+            <img src="/assets/quote.svg" alt="Quote" className="w-8 h-8 md:w-6 md:h-6 mr-2" />
+            <span className="text-[#FFFFFF] text-[8px] md:text-[12px]">Hassan Ali <br /> <span className="text-[#A7A7A7]">CTO & Founder @ Omningage</span></span>
           </div>
-
-          <p className="text-[#A7A7A7] mb-6 text-sm md:text-base">
-            CTO & Founder @ Omningage
-          </p>
 
           <button className="bg-[#FBAD18] text-[#1C1C1C] w-full md:w-[250px] py-3 rounded-full font-bold hover:bg-[#FFA500] transition flex items-center justify-center">
             Book a call <img src="/assets/uprightarrowblack.svg" alt="Arrow" className="inline w-4 h-4 ml-2" />
