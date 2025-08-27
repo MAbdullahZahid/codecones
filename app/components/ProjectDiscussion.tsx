@@ -44,7 +44,7 @@ export default function ProjectDiscussion() {
   }, []);
 
   return (
-    <div className="flex flex-col lg:flex-row items-center justify-center bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 project-discussion-anim">
+    <div className="flex flex-col mb-10 lg:flex-row items-center justify-center bg-gray-50 py-10 px-4 sm:px-6 lg:px-8 project-discussion-anim">
       {/* Left Content */}
       <div className="w-full lg:w-1/2 max-w-xl mb-12 lg:mb-0 lg:pr-12">
         <div className="text-center lg:text-left mb-8">
@@ -84,7 +84,7 @@ export default function ProjectDiscussion() {
         </div>
 
         {/* Schedule a call section */}
-        <div className="mb-8 lg:mb-0">
+        <div className="mt-25 mb-8 lg:mb-0">
           <p className="text-gray-700 font-medium mb-4">Schedule a call:</p>
           <div className="flex items-center bg-white p-4 rounded-lg shadow-sm max-w-md w-[280px]">
             <Image
@@ -127,13 +127,13 @@ export default function ProjectDiscussion() {
             </div>
 
             <div className="flex flex-col sm:flex-row gap-4">
-              <select className="w-full p-3 border border-gray-300 rounded-md text-sm sm:text-base">
+              <select className="w-full p-3 border border-gray-300 rounded-md text-sm sm:text-base text-[#6A6A6A]">
                 <option value="">Project Budget</option>
                 <option value="low">Low</option>
                 <option value="medium">Medium</option>
                 <option value="high">High</option>
               </select>
-              <select className="w-full p-3 border border-gray-300 rounded-md text-sm sm:text-base">
+              <select className="w-full p-3 border border-gray-300 rounded-md text-sm sm:text-[15px] text-[#6A6A6A]">
                 <option value="">How did you hear about us?</option>
                 <option value="google">Google</option>
                 <option value="social-media">Social Media</option>
@@ -176,7 +176,7 @@ export default function ProjectDiscussion() {
                 Prefer email?{" "}
                 <a
                   href="mailto:hello@codecones.com"
-                  className="text-blue-600 hover:underline"
+                  className="text-black underline font-bold"
                 >
                   hello@codecones.com
                 </a>
