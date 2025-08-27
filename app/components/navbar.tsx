@@ -31,7 +31,7 @@ export default function Navbar() {
             {["Home", "About", "Products", "Services", "Blogs"].map((item, idx) => (
               <li key={idx} className={idx > 1 ? "flex items-center space-x-1" : ""}>
              <a
-  href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"}
+  href={item === "Home" ? "/" : item === "About" ? "/aboutus" :item === "Blogs" ? "/blogs" : "#" }
   className={`relative text-[18px] max-[1150px]:text-[14px] font-medium text-[#000] hover:text-gray-700
     ${["Home", "About", "Blogs"].includes(item) ? 
       "after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black  hover:after:w-full" 
@@ -71,7 +71,7 @@ export default function Navbar() {
           <ul className="flex flex-col space-y-4 text-[16px] font-medium text-[#000]">
             {["Home", "About", "Products", "Services", "Blogs"].map((item, idx) => (
               <li key={idx} className={idx > 1 ? "flex items-center space-x-1" : ""}>
-                <a href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"}>{item}</a>
+                <a href={item === "Home" ? "/" : item === "About" ? "/aboutus" : item === "Blogs" ? "/blogs" : "#"}>{item}</a>
                 {(item === "Products" || item === "Services") && (
                   <Image src={downArrow} alt="down arrow" width={16} height={16} />
                 )}
