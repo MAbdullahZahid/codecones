@@ -96,7 +96,7 @@ const Footer = () => {
                 <div className="border-t border-gray-700 my-6 md:my-8"></div>
                 
                 {/* Copyright Section */}
-                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6">
+                <div className="flex flex-col md:flex-row justify-between items-center gap-4 mt-6 mb-10">
                     <p className="text-sm text-[#A7A7A7]">codecones LLC © 2025</p>
                     
                     <div className="flex flex-col sm:flex-row items-center gap-2 text-sm text-[#A7A7A7]">
@@ -146,13 +146,15 @@ const Footer = () => {
             </div>
             
             {/* Background Logo */}
-            <Image 
-                src="/assets/endfooter logo.svg"
-                alt="End Footer Logo"
-                width={400}
-                height={133}
-                className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[5%] pointer-events-none w-3/4 max-w-lg hidden md:block"
-            />
+        <Image 
+  src="/assets/endfooter logo.svg"
+  alt="End Footer Logo"
+  width={400}
+  height={133}
+  className="absolute bottom-0 left-1/2 -translate-x-1/2 translate-y-[5%] pointer-events-none w-full max-w-6xl hidden md:block"
+/>
+
+
         </div>
     );  
 }
