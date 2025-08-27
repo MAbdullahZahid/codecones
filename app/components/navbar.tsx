@@ -30,12 +30,17 @@ export default function Navbar() {
           <ul className="flex space-x-12 max-[1150px]:space-x-4">
             {["Home", "About", "Products", "Services", "Blogs"].map((item, idx) => (
               <li key={idx} className={idx > 1 ? "flex items-center space-x-1" : ""}>
-                <a
-                  href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"}
-                  className="text-[18px] max-[1150px]:text-[14px] font-medium text-[#000] hover:text-gray-700"
-                >
-                  {item}
-                </a>
+             <a
+  href={item === "Home" ? "/" : item === "About" ? "/aboutus" : "#"}
+  className={`relative text-[18px] max-[1150px]:text-[14px] font-medium text-[#000] hover:text-gray-700
+    ${["Home", "About", "Blogs"].includes(item) ? 
+      "after:content-[''] after:absolute after:left-0 after:-bottom-3 after:w-0 after:h-[2px] after:bg-black  hover:after:w-full" 
+      : ""}`
+  }
+>
+  {item}
+</a>
+
                 {(item === "Products" || item === "Services") && (
                   <Image src={downArrow} alt="down arrow" width={14} height={14} priority/>
                 )}
