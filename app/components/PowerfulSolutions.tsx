@@ -45,29 +45,32 @@ export default function PowerfulSolutions() {
     <div className="flex flex-col bg-[#DFDFDF33] anim-section">
       {/* Responsive container for comfy side margins */}
       <div className="w-full max-w-6xl mx-auto px-4 sm:px-6 lg:px-10 py-8 md:py-12">
-        {/* This wrapper sets the width by the headline, so the row below aligns to the same left/right edges */}
-        <div className="w-fit">
-          <h1 className="text-left text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-tight">
-            <span className="text-[#1C1C1C] split-anim">Transform your </span>
-            <span className="text-[#828282] split-anim">ideas into powerful solutions</span>
-          </h1>
+        {/* Centering wrapper - added to center the headline section */}
+        <div className="flex justify-center w-full">
+          {/* This wrapper sets the width by the headline, so the row below aligns to the same left/right edges */}
+          <div className="w-fit">
+            <h1 className="text-left text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-tight">
+              <span className="text-[#1C1C1C] split-anim">Transform your </span>
+              <span className="text-[#828282] split-anim">ideas into powerful solutions</span>
+            </h1>
 
-          {/* Space between headline and the row below */}
-          <div className="h-3 sm:h-4 md:h-6"></div>
+            {/* Space between headline and the row below */}
+            <div className="h-3 sm:h-4 md:h-6"></div>
 
-          {/* Row that shares the exact width of the headline */}
-          <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
-            <div className="text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-tight">
-              <span className="text-[#A7A7A7] split-anim">Just lik</span>
-              <span className="text-[#DFDFDF] split-anim">e they did!</span>
+            {/* Row that shares the exact width of the headline */}
+            <div className="flex flex-col sm:flex-row sm:items-center sm:justify-between gap-3 sm:gap-4">
+              <div className="text-[20px] sm:text-[28px] md:text-[34px] lg:text-[40px] font-bold leading-tight">
+                <span className="text-[#A7A7A7] split-anim">Just lik</span>
+                <span className="text-[#DFDFDF] split-anim">e they did!</span>
+              </div>
+
+              <button className="bg-[#003462] text-white py-2 px-6 rounded-full flex items-center justify-center hover:bg-[#002540] transition-colors">
+                Start building yours
+                <span className="ml-2">
+                  <Image src={arrowUpRight} alt="arrow up right" width={18} height={18} priority />
+                </span>
+              </button>
             </div>
-
-            <button className="bg-[#003462] text-white py-2 px-6 rounded-full flex items-center justify-center hover:bg-[#002540] transition-colors">
-              Start building yours
-              <span className="ml-2">
-                <Image src={arrowUpRight} alt="arrow up right" width={18} height={18} priority />
-              </span>
-            </button>
           </div>
         </div>
 
