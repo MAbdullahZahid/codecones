@@ -80,7 +80,7 @@ export default function PowerfulSolutions() {
           {/* Content */}
           <div className="w-full lg:w-3/4">
             <div
-              className="bg-white p-4 md:p-6 rounded-lg lg:rounded-l-none rounded-r-lg shadow-sm"
+              className=" p-4 md:p-6 rounded-lg lg:rounded-l-none rounded-r-lg"
               onMouseEnter={() => setIsHovering(false)}
             >
               <h2 className="text-xl sm:text-2xl md:text-3xl font-bold text-[#1C1C1C] mb-4">
@@ -95,7 +95,7 @@ export default function PowerfulSolutions() {
                 alt={`${selectedTab} Video`}
                 width={500}
                 height={300}
-                className="w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 object-cover rounded-lg shadow-md"
+                className="w-full h-auto max-h-64 sm:max-h-80 md:max-h-96 object-cover rounded-[20px] shadow-md"
               />
 
               <div className="mt-6">
