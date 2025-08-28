@@ -8,7 +8,10 @@ const blogSchema = new mongoose.Schema(
     description: { type: String, required: true, maxlength: 300 },
     authorPic: { type: String, required: true },
     authorName: { type: String, required: true },
-    publishDate: { type: Date, default: Date.now },
+    publishDate: {
+  type: String, // store only "YYYY-MM-DD"
+  required: true,
+},
     content: { type: String, required: true },
   },
   { timestamps: true }

@@ -56,7 +56,12 @@ if (authorFile && authorFile instanceof File) {
   authorPic: authorPicUrl,  
   authorName: formData.get('authorName')?.toString() || '',
   content: formData.get('content')?.toString() || '',
+publishDate: String(new Date().toISOString().split("T")[0]),
+
+
 };
+console.log("publishDate type:", typeof data.publishDate, data.publishDate);
+
 
     const newBlog = new Blog(data);
     const savedBlog = await newBlog.save();
