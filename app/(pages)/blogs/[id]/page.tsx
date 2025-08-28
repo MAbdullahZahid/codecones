@@ -1,3 +1,5 @@
+import formatDate from "@/app/helper/dateFormatter";
+
 interface Blog {
   _id: string;
   title: string;
@@ -29,6 +31,8 @@ export default async function BlogDetails({ params }: { params: { id: string } }
         </p>
       </div>
       
+      {/* Author Info */}
+     
      
       {/* Featured Image */}
       <div className="w-full h-48 sm:h-64 md:h-80 lg:h-96 mb-8 overflow-hidden rounded-lg">
@@ -37,6 +41,18 @@ export default async function BlogDetails({ params }: { params: { id: string } }
           alt={blog.title} 
           className="w-full h-full object-cover"
         />
+      </div>
+
+       <div className="flex items-center gap-3 mb-6">
+        <img 
+          src={blog.authorPic} 
+          alt={blog.authorName} 
+          className="w-10 h-10 rounded-full object-cover" 
+        />
+        <div>
+          <p className="font-medium text-gray-500">by <span className="text-[#FBAD18]">{blog.authorName}</span></p>
+          <p className="text-sm text-gray-500">Published Date: <span className="text-black">{formatDate(blog.publishDate)}</span></p>
+        </div>
       </div>
       
       {/* Content */}
