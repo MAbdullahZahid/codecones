@@ -14,7 +14,6 @@ const blogSchema = new mongoose.Schema(
   { timestamps: true }
 );
 
-// Fix OverwriteModelError in Next.js dev mode
 const Blog = mongoose.models.Blog || mongoose.model("Blog", blogSchema);
 
 export default Blog;

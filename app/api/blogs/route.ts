@@ -6,7 +6,6 @@ import { NextRequest, NextResponse } from 'next/server';
 import { promises as fs } from 'fs';
 import path from 'path';
 
-// Ensure MongoDB is connected
 connectDB();
 
 export async function POST(req: NextRequest) {
@@ -32,16 +31,32 @@ export async function POST(req: NextRequest) {
       picUrl = `/uploads/${fileName}`;
     }
 
-    // Build blog object
+    // Handle uploaded authorPic
+const authorFile = formData.get('authorPic');
+let authorPicUrl = '';
+
+if (authorFile && authorFile instanceof File) {
+  const buffer = Buffer.from(await authorFile.arrayBuffer());
+  const uploadsDir = path.join(process.cwd(), 'public', 'uploads');
+  await fs.mkdir(uploadsDir, { recursive: true });
+  const fileName = `${Date.now()}-${authorFile.name}`;
+  const filePath = path.join(uploadsDir, fileName);
+  await fs.writeFile(filePath, buffer);
+
+  authorPicUrl = `/uploads/${fileName}`;
+}
+
+
+  
     const data = {
-      pic: picUrl,
-      title: formData.get('title')?.toString() || '',
-      timeToRead: formData.get('timeToRead')?.toString() || '',
-      description: formData.get('description')?.toString() || '',
-      authorPic: formData.get('authorPic')?.toString() || '',
-      authorName: formData.get('authorName')?.toString() || '',
-      content: formData.get('content')?.toString() || '',
-    };
+  pic: picUrl,
+  title: formData.get('title')?.toString() || '',
+  timeToRead: formData.get('timeToRead')?.toString() || '',
+  description: formData.get('description')?.toString() || '',
+  authorPic: authorPicUrl,  
+  authorName: formData.get('authorName')?.toString() || '',
+  content: formData.get('content')?.toString() || '',
+};
 
     const newBlog = new Blog(data);
     const savedBlog = await newBlog.save();
@@ -53,7 +68,7 @@ export async function POST(req: NextRequest) {
   }
 }
 
-// GET all blogs
+
 export async function GET() {
   try {
     const blogs = await Blog.find().sort({ createdAt: -1 });
