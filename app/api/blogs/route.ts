@@ -47,8 +47,7 @@ if (authorFile && authorFile instanceof File) {
 }
 
 
-  
-    const data = {
+  const data = {
   pic: picUrl,
   title: formData.get('title')?.toString() || '',
   timeToRead: formData.get('timeToRead')?.toString() || '',
@@ -56,10 +55,10 @@ if (authorFile && authorFile instanceof File) {
   authorPic: authorPicUrl,  
   authorName: formData.get('authorName')?.toString() || '',
   content: formData.get('content')?.toString() || '',
-publishDate: String(new Date().toISOString().split("T")[0]),
-
-
+  publishDate: new Date().toISOString().split("T")[0],
+  feature: formData.get('feature') === 'true', // checkbox or toggle in UI
 };
+
 console.log("publishDate type:", typeof data.publishDate, data.publishDate);
 
 

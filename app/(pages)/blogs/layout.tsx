@@ -2,6 +2,8 @@
 import Banner from "../../components/banner"
 import Navbar from "../../components/navbar";
 import BlogNavbar from "./components/blogNavbar";
+import ProjectDiscussion from "@/app/components/ProjectDiscussion";
+import Footer from "@/app/components/footer";
 export default function RootLayout({
   children,
 }: Readonly<{
@@ -14,6 +16,8 @@ export default function RootLayout({
         <Navbar />
         <BlogNavbar />
         {children}
+        <ProjectDiscussion />
+        <Footer />
       </body>
     </html>
   );

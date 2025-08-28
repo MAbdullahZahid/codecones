@@ -1,4 +1,5 @@
 import Image from "next/image";
+import formatDate from "../../helper/dateFormatter";
 
 interface Blog {
   _id: string;
@@ -10,7 +11,7 @@ interface Blog {
   authorName: string;
   publishDate: string;
   content: string;
-  category?: string;
+  feature: boolean;
 }
 
 export default async function BlogPage() {
@@ -26,70 +27,86 @@ export default async function BlogPage() {
   }
 
   // Get the first blog as the featured post
-  const featuredBlog = blogs.length > 0 ? blogs[0] : null;
-  // Get the remaining blogs for the grid
-  const remainingBlogs = blogs.length > 1 ? blogs.slice(1) : [];
+  // Pick the featured blog from DB instead of first item
+  const featuredBlog = blogs.find((b) => b.feature) || null;
+  const remainingBlogs = featuredBlog
+    ? blogs.filter((b) => b._id !== featuredBlog._id)
+    : blogs;
 
   return (
     <div className="min-h-screen bg-white">
-    
-      
-      <section className="px-6 md:px-12 max-w-7xl mx-auto py-8">
+      <section className="px-4 sm:px-6 md:px-8 lg:px-12 max-w-7xl mx-auto py-6 md:py-8">
         {/* Header */}
-        <div className="mb-12">
-          <h1 className="text-4xl md:text-5xl font-bold text-gray-900 mb-2">Codecones Blogs</h1>
+        <div className="mb-8 md:mb-12">
+          <h1 className="text-3xl sm:text-4xl md:text-5xl font-bold text-gray-900 mb-2">
+            Codecones Blogs
+          </h1>
         </div>
 
         {/* Featured Blog */}
         {featuredBlog && (
-          <div className="mb-16 border-b pb-12">
-            <div className="flex flex-col md:flex-row gap-8">
+          <div className="mb-12 md:mb-16 border-b pb-8 md:pb-12">
+            <div className="flex flex-col lg:flex-row gap-6 md:gap-8">
               {/* Left Column - Blog Image */}
-              <div className="md:w-1/2">
-                <Image
-                  src={featuredBlog.pic && featuredBlog.pic.startsWith("/")
-                    ? featuredBlog.pic
-                    : `/uploads/${featuredBlog.pic}`}
-                  alt={featuredBlog.title}
-                  width={600}
-                  height={400}
-                  className="w-full h-96 object-cover rounded-lg"
-                />
+              <div className="lg:w-1/2">
+                <div className="relative aspect-video md:aspect-[3/2] lg:aspect-video">
+                  <Image
+                    src={
+                      featuredBlog.pic && featuredBlog.pic.startsWith("/")
+                        ? featuredBlog.pic
+                        : `/uploads/${featuredBlog.pic}`
+                    }
+                    alt={featuredBlog.title}
+                    fill
+                    className="w-full object-cover rounded-lg"
+                    sizes="(max-width: 768px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                  />
+                </div>
               </div>
-              
+
               {/* Right Column - Blog Content */}
-              <div className="md:w-1/2 flex flex-col justify-center">
+              <div className="lg:w-1/2 flex flex-col justify-center">
                 {/* First Row - Category and Read Time */}
-                <div className="mb-4">
-                  <span className="inline-block px-3 py-1 text-[#003462] rounded-full text-sm font-medium">
+                <div className="mb-3 md:mb-4 flex flex-col sm:flex-row sm:items-center gap-2 sm:gap-0">
+                  <span className="inline-block px-3 py-1 text-[#003462] rounded-full text-xs sm:text-sm font-medium">
                     {featuredBlog.title}
                   </span>
-                  <span className="ml-3 text-gray-500 text-sm">{featuredBlog.timeToRead} to read</span>
+                  <span className="sm:ml-3 text-gray-500 text-xs sm:text-sm">
+                    {featuredBlog.timeToRead} to read
+                  </span>
                 </div>
-                
+
                 {/* Second Row - Title and Description */}
-                <div className="mb-6">
-                  <h2 className="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
+                <div className="mb-4 md:mb-6">
+                  <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold text-gray-900 mb-3 md:mb-4">
                     {featuredBlog.description}
                   </h2>
-                  
-               
                 </div>
-                
+
                 {/* Third Row - Author Information */}
                 <div className="flex items-center">
-                  <Image
-                    src={featuredBlog.authorPic && featuredBlog.authorPic.startsWith("/") 
-                      ? featuredBlog.authorPic 
-                      : `/uploads/${featuredBlog.authorPic}`}
-                    alt={featuredBlog.authorName}
-                    width={48}
-                    height={48}
-                    className="rounded-full"
-                  />
-                  <div className="ml-4">
-                    <p className="text-gray-900 font-medium">by {featuredBlog.authorName}</p>
-                    <p className="text-gray-500 text-sm">Published Date: {featuredBlog.publishDate}</p>
+                  <div className="relative w-10 h-10 md:w-12 md:h-12">
+                    <Image
+                      src={
+                        featuredBlog.authorPic &&
+                        featuredBlog.authorPic.startsWith("/")
+                          ? featuredBlog.authorPic
+                          : `/uploads/${featuredBlog.authorPic}`
+                      }
+                      alt={featuredBlog.authorName}
+                      fill
+                      className="rounded-full object-cover"
+                      sizes="48px"
+                    />
+                  </div>
+
+                  <div className="flex flex-col sm:flex-row ml-3 gap-2 sm:gap-4 md:gap-6 text-xs sm:text-sm">
+                    <p className="text-[#A7A7A7] font-medium">
+                      by <span className="text-[#FBAD18]">{featuredBlog.authorName}</span>
+                    </p>
+                    <p className="text-[#6A6A6A] font-medium">
+                      Published: <span className="text-black">{formatDate(featuredBlog.publishDate)}</span>
+                    </p>
                   </div>
                 </div>
               </div>
@@ -99,57 +116,67 @@ export default async function BlogPage() {
 
         {/* Blog Grid */}
         <div className="mb-12">
-        
-          
-          <div className="grid gap-8 sm:grid-cols-1 md:grid-cols-2 lg:grid-cols-3">
+          <div className="grid gap-6 sm:gap-8 grid-cols-1 sm:grid-cols-2 lg:grid-cols-3">
             {remainingBlogs.map((blog) => {
-              const blogPicPath = blog.pic && blog.pic.startsWith("/")
-                ? blog.pic
-                : `/uploads/${blog.pic}`;
+              const blogPicPath =
+                blog.pic && blog.pic.startsWith("/")
+                  ? blog.pic
+                  : `/uploads/${blog.pic}`;
 
-              const authorPicPath = blog.authorPic && blog.authorPic.startsWith("/")
-                ? blog.authorPic
-                : blog.authorPic
-                ? `/uploads/${blog.authorPic}`
-                : "/uploads/default-author.png";
+              const authorPicPath =
+                blog.authorPic && blog.authorPic.startsWith("/")
+                  ? blog.authorPic
+                  : blog.authorPic
+                  ? `/uploads/${blog.authorPic}`
+                  : "/uploads/default-author.png";
 
               return (
                 <div
                   key={blog._id}
-                  className="border rounded-lg overflow-hidden shadow hover:shadow-lg transition duration-300"
+                  className="rounded-2xl sm:rounded-[24px] overflow-hidden shadow hover:shadow-lg transition duration-300 flex flex-col"
                 >
                   {blogPicPath && (
-                    <Image
-                      src={blogPicPath}
-                      alt={blog.title}
-                      width={400}
-                      height={250}
-                      className="w-full h-48 object-cover"
-                    />
+                    <div className="relative aspect-video">
+                      <Image
+                        src={blogPicPath}
+                        alt={blog.title}
+                        fill
+                        className="w-full object-cover"
+                        sizes="(max-width: 640px) 100vw, (max-width: 1024px) 50vw, 33vw"
+                      />
+                    </div>
                   )}
 
-                  <div className="p-6">
-                    <div className="flex justify-between items-center mb-3">
-                      <span className="inline-block px-3 py-1 bg-blue-100 text-blue-800 rounded-full text-xs font-medium">
-                        {blog.category || "UIUX"}
+                  <div className="p-4 sm:p-6 bg-[#F9F9F9] flex-grow">
+                    <div className="flex flex-col sm:flex-row sm:justify-between sm:items-center mb-3 gap-2">
+                      <span className="inline-block px-2 py-1 text-[#1C1C1C] rounded-full text-xs font-medium">
+                        {blog.title}
                       </span>
-                      <span className="text-gray-500 text-sm">{blog.timeToRead}</span>
+                      <div className="flex items-center gap-2 text-gray-500 text-xs sm:text-sm">
+                        <span className="w-1.5 h-1.5 sm:w-2 sm:h-2 bg-[#D9D9D9] rounded-full inline-block"></span>
+                        <span>{blog.timeToRead} to read</span>
+                      </div>
                     </div>
-                    
-                    <h2 className="font-bold text-xl mb-3 text-gray-900">{blog.title}</h2>
-                    <p className="text-gray-700 text-sm mb-4 line-clamp-2">{blog.description}</p>
+
+                    <h2 className="font-bold text-lg sm:text-xl mb-3 text-gray-900 line-clamp-2">
+                      {blog.description}
+                    </h2>
 
                     <div className="flex items-center mt-4">
-                      <Image
-                        src={authorPicPath}
-                        alt={blog.authorName}
-                        width={40}
-                        height={40}
-                        className="rounded-full"
-                      />
-                      <div className="ml-3">
-                        <p className="text-sm font-medium text-gray-900">{blog.authorName}</p>
-                        <p className="text-xs text-gray-500">{blog.publishDate}</p>
+                      <div className="relative w-8 h-8 sm:w-10 sm:h-10">
+                        <Image
+                          src={authorPicPath}
+                          alt={blog.authorName}
+                          fill
+                          className="rounded-full object-cover"
+                          sizes="40px"
+                        />
+                      </div>
+                      <div className="flex flex-col sm:flex-row ml-3 gap-1 sm:gap-3 text-xs">
+                        <p className="text-[#A7A7A7] font-medium">
+                          by <span className="text-[#FBAD18]">{blog.authorName}</span>
+                        </p>
+                        <p className="text-black font-medium">{formatDate(blog.publishDate)}</p>
                       </div>
                     </div>
                   </div>
