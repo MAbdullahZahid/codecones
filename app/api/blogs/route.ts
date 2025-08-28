@@ -81,3 +81,4 @@ export async function GET() {
     return NextResponse.json({ error: 'Error fetching blogs', details: err }, { status: 500 });
   }
 }
+
